@@ -38,16 +38,36 @@ for value in myLookup.values{
         total += number
     }
     //int Add the value
-    
+    else if let number = value as? Int{
+        total += Double(number)
+    }
     //String Add 1
-    
+    else if let _ = value as? String{
+        total += 1
+    }
     //Boolean add 2 if true add -3 if false
-    
+    else if let bool = value as? Bool{
+        total += bool ? 2 : -3
+    }
 }
 
 //:  Create a variable `total2` of type `Double` set to 0. Loop through the collection again, adding up all the integers and doubles. For each string that you come across during the loop, attempt to convert the string into a number, and add that value to the total. Ignore booleans. Print the total.
- 
-
+var total2 : Double = 0
+for value in myLookup.values{
+    //doubles
+    if let number = value as? Double{
+        total2 += number
+    //ints
+    if let number = value as? Int{
+        total2 += Double(number)
+    //strings
+    if let string = value as? String{
+        if let number = Double(String){
+            total2 += number
+        }
+    }
+}
+print(total2)
 /*:
 page 1 of 2  |  [Next: App Exercise - Workout Types](@next)
  */
